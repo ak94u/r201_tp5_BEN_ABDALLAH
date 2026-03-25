@@ -6,7 +6,7 @@ class Point2D:
     def __init__(self, x, y):
         self.__x = x
         self.__y = y
-        self.nb_points += 1
+        Point2D.nb_points += 1
 
     def _get_x(self):
         return self.__x
@@ -43,7 +43,13 @@ class Point2D:
     @property
     def theta(self):
         angle = 0
-        d = d.rho()
+        if self.__x == 0 :
+            return math.degrees(math.atan2(self.__y, self.__x))
+        else:
+            x = math.acos(self.__x/ self.rho)
+            y = math.asin(self.__y/ self.rho)
+            angle = y/x
+            return math.degrees(angle)
         
 
     def affiche(self):
@@ -70,6 +76,8 @@ print(Point2D.__dict__)
 
 print(hasattr(p1, 'x'))
 print(hasattr(p1, 'z'))
+print(p1.rho)
+print(p1.theta)
 
-
+print(Point2D.affiche_nb_point())
 
