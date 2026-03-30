@@ -1,0 +1,9 @@
+def theta(self):
+        angle = 0
+        if self.__x == 0 :
+            return math.degrees(math.atan2(self.__y, self.__x))
+        else:
+            x = math.acos(self.__x/ self.rho)
+            y = math.asin(self.__y/ self.rho)
+            angle = y/x
+            return math.degrees(angle)
