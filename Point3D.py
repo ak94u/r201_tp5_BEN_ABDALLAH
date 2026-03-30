@@ -30,7 +30,7 @@ class Point3D(Point2D):
     @property
     def rho(self):
        """ Distance à l'origine (rayon sphérique) """
-       rho2D = super().rho()
+       rho2D = super().rho
        square_z = self._get_z() ** 2
        return math.sqrt(rho2D ** 2 + square_z)
     
@@ -38,10 +38,11 @@ class Point3D(Point2D):
     def r_xy(self): 
         """ Projection dans le plan XY (rayon cylindrique) """
         return math.sqrt(self.__x ** 2 + self.__y **2)
-    
+   
+    @property
     def theta(self): 
         """Angle azimutal dans le plan XY -- entre -180° et 180°"""
-        return math.degrees(math.atan2(self.__y, self.x))
+        return super().theta
     
     def phi(self):
         """Angle polaire depuis l'axe Z (colatitude) - entre 0° et 180°"""
@@ -50,10 +51,8 @@ class Point3D(Point2D):
         return math.degrees(math.acos(self.__z / self.rho))
     
     def affiche(self):
-        x = self.__x
-        y = self.__y
         z = self.__z
-        print(f"x = {x}, y = {y}, z = {z}")
+        print(f"{super().affiche()}, z = {z}")
 
     @classmethod
     def affiche_nb_point(cls):
@@ -63,4 +62,4 @@ class Point3D(Point2D):
         return super().__eq__(p) and p._get_z() == self.__z
     
     def __str__(self):
-        return "(" + str(self._get_x()) + ", " + str(self._get_y()) + str(self._get_z()) + ")"
+        return "(" + str(self._get_x()) + ", " + str(self._get_y()) + ", " +  str(self._get_z()) + ")"
