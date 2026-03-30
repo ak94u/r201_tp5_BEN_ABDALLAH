@@ -37,22 +37,25 @@ class Point3D(Point2D):
     @property 
     def r_xy(self): 
         """ Projection dans le plan XY (rayon cylindrique) """
-        return math.sqrt(self.__x ** 2 + self.__y **2)
+        return super().rho
    
     @property
     def theta(self): 
         """Angle azimutal dans le plan XY -- entre -180° et 180°"""
         return super().theta
     
+    @property
     def phi(self):
         """Angle polaire depuis l'axe Z (colatitude) - entre 0° et 180°"""
         if self.rho == 0:
             return 0.0
-        return math.degrees(math.acos(self.__z / self.rho))
+        return math.degrees(math.acos(self._get_z() / self.rho))
     
     def affiche(self):
+        x = self._get_x()
+        y = self._get_y()
         z = self.__z
-        print(f"{super().affiche()}, z = {z}")
+        print(f"x = {x}, y = {y}, z = {z}")
 
     @classmethod
     def affiche_nb_point(cls):
