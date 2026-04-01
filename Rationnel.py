@@ -1,27 +1,31 @@
-class Relationnel:
+class Rationnel:
     nb_Relationnel = 0
 
     def __init__(self, p, q):
         self.__p = p
         self.__q = q
-        Relationnel.nb_Relationnel += 1
+        Rationnel.nb_Relationnel += 1
 
-    def _get_P(self):
+    def __str__(self):
+        if self._get_Denum() == 0 :
+            return False
+        return str(self._get_Num()) + "/" + str(self._get_Denum())
+    
+    def _get_Num(self):
         return self.__p
     
-    def _set_P(self, p):
+    def _set_Num(self, p):
         self.__p = p
     
-    def _get_Q(self):
+    def _get_Denum(self):
         return self.__q
     
     def _set_Q(self, q):
         self.__q = q
 
-    def __str__(self):
-        if self._get_Q() == 0 :
-            return -1
-        
-        return str(self._get_P()) + "/" + str(self._get_Q())
-    
-    
+    def toFloat(self):
+        if self.__q == 0:
+            print("P | Q n'est pas défini en 0")
+            return False
+        else: 
+            return self.__p / self.__q
