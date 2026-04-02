@@ -25,7 +25,20 @@ class Rationnel:
 
     def toFloat(self):
         if self.__q == 0:
-            print("P | Q n'est pas défini en 0")
+            print("(P | Q) n'est pas défini en 0")
             return False
         else: 
-            return self.__p / self.__q
+            return self._get_Num() / self._get_Denum()
+        
+    @staticmethod
+    def PGCD(a, b):
+        a, b = abs(a), abs(b)
+        while b != 0:
+            a, b = b, a % b
+        return a
+
+
+    def simpifier(p, q):
+        
+        
+    
