@@ -38,7 +38,7 @@ class Rationnel:
         return a
 
 
-    def simpifier(self):
+    def simplifier(self):
         p = self.PGCD(self.__p, self._q)
         
         a = self.__p // p
@@ -52,7 +52,7 @@ class Rationnel:
         p_new = self.__p * r._get_Denum() + r._get_Num() * self.__q
         q_new = self.__q * r._get_Denum()
 
-        return self.simpifier(Rationnel(p_new, q_new))
+        return Rationnel(p_new, q_new)
     
     def __mul__(self, r):
         return self.__p * r._get_Num() + self.__q * r._get_Denum()
@@ -61,7 +61,26 @@ class Rationnel:
         p_new = self.__p * r._get_Denum() - r._get_Num() * self.__q
         q_new = self.__q * r._get_Denum()
 
-        return self.simpifier(Rationnel(p_new, q_new))
+        return Rationnel(p_new, q_new)
     
     def __truediv__(self, r):
-        if r.p
+        p_new = self.__p * r.get_Denum()
+        q_new = self.__q * r.get_Num()
+
+        return Rationnel(p_new, q_new)
+    
+    def __ne__(self, r):
+       return self.__p != r._get_Num() and self.__q != r._get_Denum()
+    
+    def __gt__(self, r):
+        return self.__p * r.get_Denum() > r.get_Num() * self.__q
+    
+    def __ge__(self, r):
+        return self.__p * r.get_Denum() >= r.get_Num() * self.__q
+    
+    def __lt__(self, r):
+        return self.__p * r.get_Denum() < r.get_Num() * self.__q
+    
+    def __le__(self, r):
+        return self.__p * r.get_Denum() <= r.get_Num() * self.__q
+        
