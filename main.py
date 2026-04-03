@@ -1,9 +1,16 @@
-"""from Point2D import Point2D"""
+from Point2D import Point2D
 from Point3D import Point3D
+from Rationnel import Rationnel
 
-"""p1 = Point2D(1, 2)
+print("----------------------------------------------------------\n")
+print("                             Point2D                      \n")
+print("----------------------------------------------------------")
+
+"""Instances de la class Point2D"""
+p1 = Point2D(1, 2)
 print(p1)
 
+"""Methode d'instances"""
 print(p1.__doc__())
 
 print(Point2D.__dict__)
@@ -13,14 +20,20 @@ print(hasattr(p1, 'z'))
 print(p1.rho)
 print(p1.theta)
 
-print(Point2D.affiche_nb_point())"""
+print(Point2D.affiche_nb_point())
 
+print("----------------------------------------------------------\n")
+print("                             Point3D                      \n")
+print("----------------------------------------------------------")
+
+"""Instances de la class Point3D"""
 p2 = Point3D(1, 2, 3)
 p3 = Point3D(1, 1, 1)
 p4 = Point3D(4, 5, 9)
 p5 = Point3D(4, 5, 9)
 
 
+"""Methode d'instances"""
 print(f"distance = {p3.distance(p2)}")
 p3.deplace(1, 1, 1)
 print(p3)
@@ -33,3 +46,12 @@ p2.affiche()
 print(Point3D.affiche_nb_point())
 print(p4 == p5)
 
+
+print("----------------------------------------------------------\n")
+print("                     class Rationnel                      \n")
+print("----------------------------------------------------------")
+
+"""Instances de la class Rationnel"""
+r1, r2 = Rationnel(3, 2), Rationnel(2, 3)
+
+print(r1.toFloat())

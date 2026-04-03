@@ -45,8 +45,8 @@ class Point2D:
         return math.degrees(math.atan2(self.__y, self.__x))
 
     def affiche(self):
-        x = self._get_x
-        y = self._get_y
+        x = self._get_x()
+        y = self._get_y()
         print(f"x = {x} y = {y}")
 
     def __eq__(self, p):
