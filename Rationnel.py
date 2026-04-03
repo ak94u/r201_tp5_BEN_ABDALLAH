@@ -43,3 +43,25 @@ class Rationnel:
         
         a = self.__p // p
         b = self.__q // p
+
+
+    def __eq__(self, r):
+        return self.__p == r._get_Num() and self.__q == r._get_Denum()
+    
+    def __add__(self, r):
+        p_new = self.__p * r._get_Denum() + r._get_Num() * self.__q
+        q_new = self.__q * r._get_Denum()
+
+        return self.simpifier(Rationnel(p_new, q_new))
+    
+    def __mul__(self, r):
+        return self.__p * r._get_Num() + self.__q * r._get_Denum()
+    
+    def __sub__(self, r):
+        p_new = self.__p * r._get_Denum() - r._get_Num() * self.__q
+        q_new = self.__q * r._get_Denum()
+
+        return self.simpifier(Rationnel(p_new, q_new))
+    
+    def __truediv__(self, r):
+        if r.p
