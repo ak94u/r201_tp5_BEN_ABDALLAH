@@ -43,5 +43,3 @@ class Rationnel:
         
         a = self.__p // p
         b = self.__q // p
-
-     
