@@ -38,7 +38,8 @@ class Rationnel:
         return a
 
 
-    def simpifier(p, q):
-        
-        
-    
+    def simpifier(self):
+        d = self.PGCD(self.__p, self.__q)
+
+        a = self.__p // d
+        b = self.__q // d    
