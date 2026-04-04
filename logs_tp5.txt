@@ -1,0 +1,27 @@
+78b1de1 Conflict résolue
+fb1c0a7 Ajout du teste none_equal
+9c6c235 Ajout du teste none_equal
+2c28ea4 Fin des tests des methode dans le main
+8f517d8 Ajout d'instances
+dc7725f Ajout de toutes les methodes spéciale
+58b85f7 Développment de la methode eq, sub, mul, add et __truediv__ en cours de dev
+50ee9bc arrengement conflict
+03db620 fin du développement de la méthode simplifier
+c4a480d fin du développement de la méthode simplifier
+9b072ff fin du développement de la méthode simplifier
+f6ef147 Ajout de la methode static pgcd et la méthode simplifier en dévloppement.
+9da2aab Ajout de la methode toFloat
+f3fd672 rename le fichier Relationnel => Rationnel
+cde7e51 Ajout des getter et des setter et de la methode abstraite __str__
+34a7a3e Ajout du fichier class Relationnel et le constructeur de la class
+6771dcb Ajout de toutes les instances dans le main conforme au TP
+4dbee6b Petite modification sur Point3D
+6d0c224 ignore de pycache
+6ffcdb0 finalisation du développement de la class Point3D et petite modification et ajout de la méthode _eq__ dans la class Point2D
+3e5de1e Ajout des fichiers .txt et du fichier main.py pour les instance d'object
+da36a79 Création du constructeur Point3D
+e6dd493 Renommage r201 en Point2D et ajout du Point3D.py
+3d3dffe finalisation de la methode theta et des instance d'objets de class Point2D
+bdbfcf3 ajout .gitignore
+6c3612a Ajout du script de la class Point2D développement de la méthode rho
+3d8a2ae Préparation au TP5
