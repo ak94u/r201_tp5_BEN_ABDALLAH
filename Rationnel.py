@@ -39,14 +39,19 @@ class Rationnel:
 
 
     def simplifier(self):
-        p = self.PGCD(self.__p, self._q)
+        p = self.PGCD(self.__p, self.__q)
         
         a = self.__p // p
         b = self.__q // p
 
+        return(Rationnel(a, b))
+    
+    @classmethod
+    def affiche_nb_point(cls):
+        return cls.nb_Relationnel
 
     def __eq__(self, r):
-        return self.__p == r._get_Num() and self.__q == r._get_Denum()
+        return self.toFloat() == r.toFloat()
     
     def __add__(self, r):
         p_new = self.__p * r._get_Denum() + r._get_Num() * self.__q
@@ -55,7 +60,10 @@ class Rationnel:
         return Rationnel(p_new, q_new)
     
     def __mul__(self, r):
-        return self.__p * r._get_Num() + self.__q * r._get_Denum()
+        p_new = self.__p * r._get_Num()
+        q_new = self.__q * r._get_Denum()
+
+        return Rationnel(p_new, q_new)
     
     def __sub__(self, r):
         p_new = self.__p * r._get_Denum() - r._get_Num() * self.__q
@@ -64,23 +72,23 @@ class Rationnel:
         return Rationnel(p_new, q_new)
     
     def __truediv__(self, r):
-        p_new = self.__p * r.get_Denum()
-        q_new = self.__q * r.get_Num()
+        p_new = self.__p * r._get_Denum()
+        q_new = self.__q * r._get_Num()
 
         return Rationnel(p_new, q_new)
     
     def __ne__(self, r):
-       return self.__p != r._get_Num() and self.__q != r._get_Denum()
+       return self.toFloat() != r.toFloat()
     
     def __gt__(self, r):
-        return self.__p * r.get_Denum() > r.get_Num() * self.__q
+        return self.__p * r._get_Denum() > r._get_Num() * self.__q
     
     def __ge__(self, r):
-        return self.__p * r.get_Denum() >= r.get_Num() * self.__q
+        return self.__p * r._get_Denum() >= r._get_Num() * self.__q
     
     def __lt__(self, r):
-        return self.__p * r.get_Denum() < r.get_Num() * self.__q
+        return self.__p * r._get_Denum() < r._get_Num() * self.__q
     
     def __le__(self, r):
-        return self.__p * r.get_Denum() <= r.get_Num() * self.__q
+        return self.__p * r._get_Denum() <= r._get_Num() * self.__q
         
