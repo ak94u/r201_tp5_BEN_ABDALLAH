@@ -74,6 +74,8 @@ print(f"{r1} >= {r2} = {r1 >= r2}")
 print(f"{r1} <= {r2} = {r1 <= r2}\n")
 print(f"{r3} >= {r3new} = {r3 >= r3new}")
 print(f"{r3} <= {r3new} = {r3 >= r3new}")
+print(f"{r3} != {r3new} = {r3 != r3new}")
+print(f"{r1} != {r2} = {r1 != r3}")
 
 print(f"Le nombre de nombres rationnel construit : {Rationnel.affiche_nb_point()}\n")
 print("Notice: chaque fois que vous faites un clacule un nouveau nombres rationnel se contruit")
